@@ -94,8 +94,8 @@ sudo nano /etc/nginx/sites-available/dcoca
 
 ## Configuración recomendada:
 Nginx
-<img width="385" height="336" alt="image" src="https://github.com/user-attachments/assets/c0209c42-3dd7-41aa-a4d4-c045a6017e4f" />
-<img width="390" height="331" alt="image" src="https://github.com/user-attachments/assets/9fa25b92-ee3c-468d-a6be-c6b11fa811d4" />
+<img width="347" height="127" alt="image" src="https://github.com/user-attachments/assets/a070a1e1-5a96-463e-9de2-501d1ce94495" />
+
 
 ## Activar configuración y limpiar el default:
 sudo ln -s /etc/nginx/sites-available/dcoca /etc/nginx/sites-enabled/dcoca
