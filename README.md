@@ -3,8 +3,9 @@
 Esta guía documenta el proceso paso a paso para instalar Mattermost en un servidor Ubuntu, utilizando PostgreSQL como base de datos y Nginx como Proxy Inverso.
 
 ##  Requisitos Previos
-* Servidor Ubuntu (20.04 o superior recomendado).
-* Acceso con privilegios `sudo`.
+* Servidor Ubuntu
+* Máquina cliente o dispositivo
+* Acceso con privilegios `sudo`
 
 ---
 
@@ -28,7 +29,8 @@ SQL
 CREATE DATABASE mattermost; 
 CREATE USER mmuser WITH PASSWORD 'admin'; 
 GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
-\q
+
+*\q Para salir
 
 # 3. Creación del Usuario de Sistema
 Por seguridad, Mattermost no debe ejecutarse como root. Creamos un usuario dedicado.
@@ -89,6 +91,7 @@ sudo apt install nginx -y
 ## Crear archivo de configuración dcoca:
 
 sudo nano /etc/nginx/sites-available/dcoca
+
 ## Configuración recomendada:
 Nginx
 <img width="385" height="336" alt="image" src="https://github.com/user-attachments/assets/c0209c42-3dd7-41aa-a4d4-c045a6017e4f" />
@@ -103,8 +106,8 @@ sudo systemctl restart nginx
 # 9. Verificación Final
 Para comprobar que todo funciona, el puerto 8065 debe estar en escucha y Nginx operativo.
 
-# Verificar puerto
 sudo ss -tlpn | grep 8065
+<img width="552" height="32" alt="image" src="https://github.com/user-attachments/assets/1018bd01-590b-450d-86a2-87b9a859b6cf" />
 
-# Verificar servicio
 sudo systemctl status mattermost
+<img width="538" height="172" alt="image" src="https://github.com/user-attachments/assets/4c187da7-163b-4248-a1f3-cab2045077a5" />
